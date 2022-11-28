@@ -1,0 +1,52 @@
+cabal-version:      2.4
+name:               aoc2019
+version:            0.1.0.0
+synopsis:           Solutions to advent of code challenges for 2019
+bug-reports:        https://github.com/aloussase/aoc2019
+license:            MIT
+author:             Alexander Goussas
+maintainer:         goussasalexander@gmail.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: README.md
+
+library
+    exposed-modules:
+          Aoc.Day.One.PartOne
+        , Aoc.Day.One.PartTwo
+        , Aoc.Day.One.Common
+    build-depends:
+          base ^>=4.15.1.0
+        , text
+        , containers
+    hs-source-dirs:   lib
+    default-language: Haskell2010
+    default-extensions: OverloadedStrings
+
+executable aoc2019-exe
+   main-is: Main.hs
+   other-modules: Input
+   build-depends:
+          base ^>=4.15.1.0
+        , aoc2019
+        , text
+        , directory
+        , filepath
+   hs-source-dirs: app
+   default-language: Haskell2010
+   default-extensions: OverloadedStrings
+
+test-suite test-solutions
+    type: exitcode-stdio-1.0
+    main-is: Spec.hs
+    hs-source-dirs: test
+    other-modules:
+        DayOneSpec
+    build-depends:
+            base ^>=4.15.1.0
+          , hspec
+          , aoc2019
+    default-language: Haskell2010
+    default-extensions: OverloadedStrings
