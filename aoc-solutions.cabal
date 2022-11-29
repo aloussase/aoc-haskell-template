@@ -1,13 +1,11 @@
 cabal-version:      2.4
-name:               aloussase-aoc-solutions
+name:               aoc-solutions
 version:            0.1.0.0
 synopsis:           Solutions to advent of code challenges
-bug-reports:        https://github.com/aloussase/aloussase-aoc-solutions
+-- bug-reports:
 license:            MIT
-author:             Alexander Goussas
-maintainer:         goussasalexander@gmail.com
-
--- A copyright notice.
+-- author:
+-- maintainer:
 -- copyright:
 -- category:
 extra-source-files: README.md
@@ -19,22 +17,23 @@ library
         , Aoc.Day.One.Common
     build-depends:
           base ^>=4.15.1.0
-        , text
-        , containers
+        , array
         , bytestring
+        , containers
+        , text
     hs-source-dirs:   lib
     default-language: Haskell2010
     default-extensions: OverloadedStrings
 
-executable aloussase-aoc-solutions-exe
+executable aoc-runner
    main-is: Main.hs
    other-modules: Input
    build-depends:
           base ^>=4.15.1.0
-        , aloussase-aoc-solutions
-        , text
+        , aoc-solutions
         , directory
         , filepath
+        , text
    hs-source-dirs: app
    default-language: Haskell2010
    default-extensions: OverloadedStrings
@@ -47,8 +46,8 @@ test-suite test-solutions
         DayOneSpec
     build-depends:
             base ^>=4.15.1.0
+          , aoc-solutions
           , hspec
-          , aloussase-aoc-solutions
     default-language: Haskell2010
     default-extensions: OverloadedStrings
 
@@ -58,10 +57,10 @@ executable aoc
    other-modules: Options, Gen, Print
    build-depends:
           base ^>=4.15.1.0
-        , text
         , directory
         , filepath
         , optparse-applicative
+        , text
         , unix
    hs-source-dirs: tool/aoc
    default-language: Haskell2010
