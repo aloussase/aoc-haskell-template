@@ -1,8 +1,8 @@
 cabal-version:      2.4
-name:               aoc2019
+name:               aloussase-aoc-solutions
 version:            0.1.0.0
-synopsis:           Solutions to advent of code challenges for 2019
-bug-reports:        https://github.com/aloussase/aoc2019
+synopsis:           Solutions to advent of code challenges
+bug-reports:        https://github.com/aloussase/aloussase-aoc-solutions
 license:            MIT
 author:             Alexander Goussas
 maintainer:         goussasalexander@gmail.com
@@ -26,12 +26,12 @@ library
     default-language: Haskell2010
     default-extensions: OverloadedStrings
 
-executable aoc2019-exe
+executable aloussase-aoc-solutions-exe
    main-is: Main.hs
    other-modules: Input
    build-depends:
           base ^>=4.15.1.0
-        , aoc2019
+        , aloussase-aoc-solutions
         , text
         , directory
         , filepath
@@ -48,7 +48,7 @@ test-suite test-solutions
     build-depends:
             base ^>=4.15.1.0
           , hspec
-          , aoc2019
+          , aloussase-aoc-solutions
     default-language: Haskell2010
     default-extensions: OverloadedStrings
 
