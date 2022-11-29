@@ -1,6 +1,6 @@
 module Aoc.Tool.Gen (generateComponentForDay, Day) where
 
-import           Control.Monad    (unless, (>=>))
+import           Control.Monad    (unless)
 
 import           Aoc.Tool.Print   (pp, ppErr)
 
@@ -115,32 +115,32 @@ createTestModuleContents moduleName = mconcat
 -- Util.
 
 nameForDay :: Day -> Maybe FilePath
-nameForDay 1   = pure "One"
-nameForDay 2   = pure "Two"
-nameForDay 3   = pure "Three"
-nameForDay 4   = pure "Four"
-nameForDay 5   = pure "Five"
-nameForDay 6   = pure "Six"
-nameForDay 7   = pure "Seven"
-nameForDay 8   = pure "Eight"
-nameForDay 9   = pure "Nine"
-nameForDay 10  = pure "Ten"
-nameForDay 11  = pure "Eleven"
-nameForDay 12  = pure "Twelve"
-nameForDay 13  = pure "Thirteen"
-nameForDay 14  = pure "Fourteen"
-nameForDay 15  = pure "Fifteen"
-nameForDay 16  = pure "Sixteen"
-nameForDay 17  = pure "Seventeen"
-nameForDay 18  = pure "Eighteen"
-nameForDay 19  = pure "Nineteen"
-nameForDay 20  = pure "Twenty"
-nameForDay 21  = pure "TwentyOne"
-nameForDay 22  = pure "TwentyTwo"
-nameForDay 23  = pure "TwentyThree"
-nameForDay 24  = pure "TwentyFour"
-nameForDay 25  = pure "TwentyFive"
-nameForDay day = Nothing
+nameForDay 1  = pure "One"
+nameForDay 2  = pure "Two"
+nameForDay 3  = pure "Three"
+nameForDay 4  = pure "Four"
+nameForDay 5  = pure "Five"
+nameForDay 6  = pure "Six"
+nameForDay 7  = pure "Seven"
+nameForDay 8  = pure "Eight"
+nameForDay 9  = pure "Nine"
+nameForDay 10 = pure "Ten"
+nameForDay 11 = pure "Eleven"
+nameForDay 12 = pure "Twelve"
+nameForDay 13 = pure "Thirteen"
+nameForDay 14 = pure "Fourteen"
+nameForDay 15 = pure "Fifteen"
+nameForDay 16 = pure "Sixteen"
+nameForDay 17 = pure "Seventeen"
+nameForDay 18 = pure "Eighteen"
+nameForDay 19 = pure "Nineteen"
+nameForDay 20 = pure "Twenty"
+nameForDay 21 = pure "TwentyOne"
+nameForDay 22 = pure "TwentyTwo"
+nameForDay 23 = pure "TwentyThree"
+nameForDay 24 = pure "TwentyFour"
+nameForDay 25 = pure "TwentyFive"
+nameForDay _  = Nothing
 
 -- | 'checkCurrentDirIsCabalProject' checks that the current directory is a Cabal project.
 checkCurrentDirIsCabalProject :: IO Bool

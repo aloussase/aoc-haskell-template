@@ -8,7 +8,6 @@ module Input
 )
 where
 
-import           Data.String     (IsString)
 import           Data.Text
 import qualified Data.Text.IO    as TIO
 import           System.FilePath

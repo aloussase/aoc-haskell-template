@@ -1,14 +1,12 @@
 module DayOneSpec where
 
-import           Test.Hspec
-
-import           Aoc.Day.One.PartTwo
+import Test.Hspec
 
 main :: IO ()
 main = hspec spec
 
 spec :: Spec
-spec = partOneSpec
+spec = partOneSpec >> partTwoSpec
 
 partOneSpec :: Spec
 partOneSpec = undefined
