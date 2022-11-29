@@ -1,26 +1,84 @@
 # Advent of Code Solutions
 
-## Solutions
+## Structure
+
+### Solutions
 
 Solutions are divided into modules in the following manner:
 
-- Each day has its separate module
-- Each part of the day also has its separate module, nested in the corresponding day's
-- There may be a `Common.hs` module inside a day to factor out common functionality in
-  parts I and II.
+- Each day has its separate module folder
+- Each part of the day has its own module in the day's folder
+- There is a `Common.hs` module inside the day's folder to factor out
+  common functionality in parts I and II.
 
-Each solution should have its corresponding test, which is usually the sample input of the
-problem.
+### Tests
 
-## Puzzle inputs
+Each solution should have its corresponding test, which usually uses the examples
+from the corresponding problem. The naming convention for the day module is
+`Day<day>Spec.hs`. For example, for day 1 the corresponding test module would be
+called `DayOneSpec`.
 
-The puzzle inputs are located in the `puzzle-inputs` directory. These must be named following the
-convention: "day{day number}.txt".
+### Puzzle inputs
+
+The puzzle inputs are located in the `puzzle-inputs` directory. These must be named
+following the convention: `day<day number>.txt`.
+
+## Generate boilerplate
+
+This template comes with a CLI tool to help you generate all this boilerplate code. To install
+it run
+
+```bash
+cabal install
+```
+
+Then you can use the tool to generate to solution component and test modules:
+
+```bash
+aoc generate --day 1
+```
+
+Example output:
+
+```
+Creating component file: lib/Aoc/Day/One/PartOne.hs
+Creating component file: lib/Aoc/Day/One/PartTwo.hs
+Creating component file: lib/Aoc/Day/One/Common.hs
+Creating test module: test/DayOneSpec.hs
+
+Finished creating component.
+
+Copy this in your cabal file to add the new component to the build:
+
+In lib:
+
+   Aoc.Day.One.PartOne,
+   Aoc.Day.One.PartTwo,
+   Aoc.Day.One.Common,
+
+In the test suite:
+
+   DayOneSpec,
+
+
+```
 
 ## Running
 
-There is a cabal project containing a program to run a given solution. It can be invoked with
-`cabal run` and passed the number of day as an argument.
+In the `app` directory there is an executable to run the solutions. You'll need to edit it
+in order to add the solution for each day. See the instructions in the source code.
+
+Then you can run it with
+
+```bash
+cabal run aoc-runner <day-number>
+```
+
+For example, to run the solution for day 1:
+
+```bash
+cabal run aoc-runner 1
+```
 
 ## License
 
