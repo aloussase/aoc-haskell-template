@@ -1,13 +1,4 @@
-module Aoc.Day.One.PartOne
-(
-  solution
-)
-where
+module Aoc.Day.One.PartOne where
 
-import           Aoc.Day.One.Common
-
-import           Data.Text          (Text)
-
-
-solution :: Text -> IO Int
-solution input = return $ sum $ map calculateFuelForModule (parseInput input)
+solution :: IO a
+solution = undefined

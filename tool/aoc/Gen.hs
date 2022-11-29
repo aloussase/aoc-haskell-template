@@ -2,6 +2,7 @@ module Gen (generateComponentForDay, Day) where
 
 import           Control.Monad    (unless)
 
+import           Data.List
 import           Data.Maybe       (fromJust)
 import           Print            (pp, ppErr)
 import           System.Directory
@@ -39,13 +40,21 @@ componentFileNames dirName = map (dirName </>) ["PartOne.hs", "PartTwo.hs", "Com
 
 createComponentFile :: FilePath -> IO ()
 createComponentFile filepath = do
-  fileExists <- doesPathExist filepath
+  fileExists <- doesFileExist filepath
   if fileExists then do
     pp $ "Component file already exists: " <> filepath
     exitSuccess
   else do
     pp $ "Creating component file: " <> filepath
-    createDirectoryIfMissing True filepath
+    createDirectoryIfMissing True $ takeDirectory filepath
+    writeFile filepath $ createModuleContents (toModuleName filepath)
+
+
+createModuleContents :: String -> String
+createModuleContents moduleName = mconcat
+  [ "module " <> moduleName <> " where", "\n\n"
+  , if "Common" `isInfixOf` moduleName then "" else "solution :: IO a\nsolution = undefined"
+  ]
 
 -- | 'checkCurrentDirIsCabalProject' checks that the current directory is a Cabal project.
 checkCurrentDirIsCabalProject :: IO Bool
