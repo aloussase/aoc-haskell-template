@@ -16,30 +16,32 @@ library
         , Aoc.Day.One.PartTwo
         , Aoc.Day.One.Common
     build-depends:
-          base ^>=4.15.1.0
-        , array
-        , bytestring
-        , containers
-        , text
+          base                 ^>=4.15.1.0
+        , array                >= 0.5.4 && < 0.6
+        , bytestring           >= 0.10.12 && < 0.11
+        , containers           >= 0.6.4 && < 0.7
+        , text                 >= 1.2.5 && < 1.3
     hs-source-dirs:   lib
+    ghc-options: -Wall
     default-language: Haskell2010
     default-extensions: OverloadedStrings
 
 executable aoc-runner
    main-is: Main.hs
+   ghc-options: -Wunused-packages -Wall
    other-modules: Input
    build-depends:
           base ^>=4.15.1.0
         , aoc-solutions
-        , directory
-        , filepath
-        , text
+        , filepath             >= 1.4.2 && < 1.5
+        , text                 >= 1.2.5 && < 1.3
    hs-source-dirs: app
    default-language: Haskell2010
    default-extensions: OverloadedStrings
 
 test-suite test-solutions
     type: exitcode-stdio-1.0
+    ghc-options: -Wunused-packages -Wall
     main-is: Spec.hs
     hs-source-dirs: test
     other-modules:
@@ -54,17 +56,16 @@ test-suite test-solutions
 
 executable aoc
    main-is: Main.hs
+   ghc-options: -Wunused-packages -Wall
    other-modules:
         Aoc.Tool.Options
       , Aoc.Tool.Gen
       , Aoc.Tool.Print
    build-depends:
-          base ^>=4.15.1.0
-        , directory
-        , filepath
-        , optparse-applicative
-        , text
-        , unix
+          base                 ^>=4.15.1.0
+        , directory            >= 1.3.6 && < 1.4
+        , filepath             >= 1.4.2 && < 1.5
+        , optparse-applicative >= 0.17.0 && < 0.18
    hs-source-dirs: tool/aoc
    default-language: Haskell2010
    default-extensions: OverloadedStrings
