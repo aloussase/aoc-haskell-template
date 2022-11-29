@@ -54,7 +54,10 @@ test-suite test-solutions
 
 executable aoc
    main-is: Main.hs
-   other-modules: Options, Gen, Print
+   other-modules:
+        Aoc.Tool.Options
+      , Aoc.Tool.Gen
+      , Aoc.Tool.Print
    build-depends:
           base ^>=4.15.1.0
         , directory

@@ -1,10 +1,11 @@
-module Gen (generateComponentForDay, Day) where
+module Aoc.Tool.Gen (generateComponentForDay, Day) where
 
 import           Control.Monad    (unless)
 
+import           Aoc.Tool.Print   (pp, ppErr)
+
 import           Data.List
 import           Data.Maybe       (fromJust)
-import           Print            (pp, ppErr)
 import           System.Directory
 import           System.Exit      (exitFailure, exitSuccess)
 import           System.FilePath

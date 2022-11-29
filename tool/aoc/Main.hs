@@ -1,7 +1,7 @@
 module Main where
 
-import           Gen     (generateComponentForDay)
-import           Options
+import           Aoc.Tool.Gen     (generateComponentForDay)
+import           Aoc.Tool.Options
 
 
 main :: IO ()

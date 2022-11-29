@@ -1,4 +1,4 @@
-module Options where
+module Aoc.Tool.Options where
 
 import           Options.Applicative
 

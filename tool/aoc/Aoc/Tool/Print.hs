@@ -1,4 +1,4 @@
-module Print where
+module Aoc.Tool.Print where
 
 import           System.IO (hPutStrLn, stderr)
 
