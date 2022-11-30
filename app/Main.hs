@@ -1,13 +1,12 @@
 module Main where
 
-import           Input
-
-import           Control.Monad      (forM_)
-import           Data.Text          (Text)
-import           System.Environment (getArgs)
+import Control.Monad (forM_)
+import Data.Text (Text)
+import Input
+import System.Environment (getArgs)
 
 -- NOTE: Add here the solutions for each day.
-solveDay ::  Int -> Text -> IO (Int, Int)
+solveDay :: Int -> Text -> IO (Int, Int)
 solveDay _day _input = error "Invalid day"
 
 solve :: Day -> IO ()
@@ -22,5 +21,6 @@ printSolutions day (p1, p2) = do
 main :: IO ()
 main = do
   args <- getArgs
-  if null args then putStrLn "Missing required argument 'day:int'"
-  else forM_ (parseDay $ head args) solve
+  if null args
+    then putStrLn "Missing required argument 'day:int'"
+    else forM_ (parseDay $ head args) solve

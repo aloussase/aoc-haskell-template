@@ -65,11 +65,17 @@ executable aoc
         Aoc.Tool.Options
       , Aoc.Tool.Gen
       , Aoc.Tool.Print
+      , Aoc.Tool.Input
    build-depends:
           base                 ^>=4.15.1.0
         , directory            >= 1.3.6 && < 1.4
         , filepath             >= 1.4.2 && < 1.5
         , optparse-applicative >= 0.17.0 && < 0.18
+        , req
+        , text
+        , dotenv
+        , bytestring
+        , utf8-string
    hs-source-dirs: tool/aoc
    default-language: Haskell2010
    default-extensions: OverloadedStrings
