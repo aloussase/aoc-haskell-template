@@ -23,6 +23,18 @@ called `DayOneSpec`.
 The puzzle inputs are located in the `puzzle-inputs` directory. These must be named
 following the convention: `day<day number>.txt`.
 
+The provided CLI tool can be used to fetch the input for every day. For example, to fetch
+the input for day 1:
+
+```bash
+aoc fetchInput --day 1
+```
+
+This will download your input and put it in `puzzle-inputs/day1.txt`.
+
+NOTE: For this to work you need to put your session cookie in an `.env` file using the
+key `AOC_SESSION`.
+
 ## Generate boilerplate
 
 This template comes with a CLI tool to help you generate all this boilerplate code. To install
